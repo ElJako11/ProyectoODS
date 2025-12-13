@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Recicla y Gana - ODS</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Game Area -->
+      <div id="game-area">
+        <div class="conveyor-belt"></div>
+        
+        <div class="bins-container">
+          <div class="bin organic" data-type="organic">
+            <div class="bin-label">Orgánico</div>
+          </div>
+          <div class="bin paper" data-type="paper">
+             <div class="bin-label">Papel</div>
+          </div>
+          <div class="bin plastic" data-type="plastic">
+             <div class="bin-label">Plástico</div>
+          </div>
+          <div class="bin general" data-type="general">
+             <div class="bin-label">Varios</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI Layer -->
+      <div class="ui-layer">
+        <div class="hud-top">
+          <div class="left-panel-group" style="display: flex; gap: 10px;">
+             <button id="info-btn" class="icon-btn" aria-label="Información ODS">ℹ️</button>
+             <div class="score-panel">
+               <span>🏆</span> <span id="score">0</span>
+             </div>
+             <div class="record-panel">
+               <span>👑</span> <span id="high-score">0</span>
+             </div>
+          </div>
+          <div class="lives-panel">
+            <span>❤️</span> <span id="lives">3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screens -->
+      <div id="start-screen" class="modal active">
+        <div class="modal-content">
+          <h1>Recicla y Gana</h1>
+          <p>¡Clasifica la basura correctamente!<br>La velocidad aumenta cada minuto.</p>
+          <button id="start-btn" class="btn">Jugar Ahora</button>
+        </div>
+      </div>
+
+      <div id="game-over-screen" class="modal">
+        <div class="modal-content">
+          <h1>¡Juego Terminado!</h1>
+          <p>Puntuación Final: <span id="final-score">0</span></p>
+          <button id="restart-btn" class="btn">Intentar de Nuevo</button>
+        </div>
+      </div>
+
+      <div id="ods-modal" class="modal">
+        <div class="modal-content">
+          <h1 style="font-size: 2rem;">ODS 12: Producción y Consumo Responsables</h1>
+          <p style="text-align: left; line-height: 1.6;">
+            Este juego promueve el <strong>Objetivo de Desarrollo Sostenible 12</strong>.
+            <br><br>
+            El reciclaje es clave para reducir nuestra huella ecológica. Al separar correctamente los residuos:
+            <ul style="text-align: left; margin-bottom: 20px;">
+                <li>Reducimos la contaminación.</li>
+                <li>Ahorramos energía y recursos naturales.</li>
+                <li>Damos una segunda vida a los materiales.</li>
+            </ul>
+            ¡Cada acción cuenta para un futuro más verde! 🌍
+          </p>
+          <button id="close-ods-btn" class="btn">Entendido</button>
+        </div>
+      </div>
+
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
